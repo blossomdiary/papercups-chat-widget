@@ -8,19 +8,22 @@
 
 ## Demo
 
-Available at https://app.papercups.io/demo
+Available at https://papercups.blossomdiary.dev/demo
 
 ![demo](https://user-images.githubusercontent.com/5264279/88118921-e4a37900-cb8c-11ea-825f-86deb8edc518.gif)
 
 ## Install
 
 ```bash
-npm install --save @papercups-io/chat-widget
+# Legacy (deprecated)
+# npm install --save @papercups-io/chat-widget
+
+npm install --save https://github.com/blossomdiary/papercups-chat-widget
 ```
 
 ## Usage
 
-First, sign up at https://app.papercups.io/register to get your account token. Your account token is what you will use to pass in as the `accountId` prop below.
+First, sign up at https://papercups.blossomdiary.dev/register to get your account token. Your account token is what you will use to pass in as the `accountId` prop below.
 
 ### Using in HTML
 
@@ -48,7 +51,7 @@ Paste the code below between your `<head>` and `</head>` tags:
         metadata: {version: 1, plan: 'premium'}, // Custom fields go here
       },
       // Optionally specify the base URL
-      baseUrl: 'https://app.papercups.io',
+      baseUrl: 'https://papercups.blossomdiary.dev',
       // Add this if you want to require the customer to enter
       // their email before being able to send you a message
       requireEmailUpfront: true,
@@ -62,7 +65,7 @@ Paste the code below between your `<head>` and `</head>` tags:
   type="text/javascript"
   async
   defer
-  src="https://app.papercups.io/widget.js"
+  src="https://papercups.blossomdiary.dev/widget.js"
 ></script>
 ```
 
@@ -73,7 +76,7 @@ Place the code below in any pages on which you would like to render the widget. 
 ```tsx
 import React from 'react';
 
-import {ChatWidget} from '@papercups-io/chat-widget';
+import { ChatWidget } from '@papercups-io/chat-widget';
 
 // You can also import the following in v1.1.0 and above:
 // import {ChatWidget, ChatWindow, Papercups} from '@papercups-io/chat-widget';
@@ -113,7 +116,7 @@ const ExamplePage = () => {
           metadata: {version: 1, plan: 'premium'}, // Custom fields go here
         }}
         // Optionally specify the base URL
-        baseUrl='https://app.papercups.io'
+        baseUrl='https://papercups.blossomdiary.dev'
         // Add this if you want to require the customer to enter
         // their email before being able to send you a message
         requireEmailUpfront
@@ -147,8 +150,8 @@ These are the props you can pass into your `<ChatWidget />` React component, or 
 | **`agentAvailableText`**          | `string`                            | The text shown when you (or your agents) are online                                                                        | We're online right now!          |
 | **`agentUnavailableText`**        | `string`                            | The text shown when you (and your agents) are offline                                                                      | We're away at the moment.        |
 | **`customer`**                    | `object`                            | Identifying information for the customer, including `name`, `email`, `external_id`, and `metadata` (for any custom fields) | N/A                              |
-| **`baseUrl`**                     | `string`                            | The base URL of your API if you're self-hosting Papercups                                                                  | https://app.papercups.io         |
-| **`iframeUrlOverride`**           | `string`                            | An override of the iframe URL we use to render the chat, if you chose to self-host that as well                            | https://chat-widget.papercups.io |
+| **`baseUrl`**                     | `string`                            | The base URL of your API if you're self-hosting Papercups                                                                  | https://papercups.blossomdiary.dev         |
+| **`iframeUrlOverride`**           | `string`                            | An override of the iframe URL we use to render the chat, if you chose to self-host that as well                            | https://papercups-chat-widget.blossomdiary.dev |
 | **`requireEmailUpfront`**         | `boolean`                           | If you want to require unidentified customers to provide their email before they can message you                           | `false`                          |
 | **`isOpenByDefault`**             | `boolean`                           | If you want the chat widget to open as soon as it loads                                                                    | `false`                          |
 | **`persistOpenState`**            | `boolean`                           | Persists the open state of the chat across pages                                                                           | `false`                          |
@@ -190,14 +193,14 @@ By default, the example widget points at development servers for the [Papercups 
 
 If you want to develop against your account in production, you can update these values to the following:
 
-- `baseUrl: http://app.papercups.io`
+- `baseUrl: http://papercups.blossomdiary.dev`
 - `iframeUrlOverride: https://chat-widget.papercups.io`
 
 _(Note that you can also simply remove these props, since the values above are the defaults.)_
 
-You'll also want to update your account token to point to your own account. If you haven't already, create a free account at https://app.papercups.io/register to get started.
+You'll also want to update your account token to point to your own account. If you haven't already, create a free account at https://papercups.blossomdiary.dev/register to get started.
 
-Once you have your account token, update the [`accountId`](https://github.com/papercups-io/chat-widget/blob/master/example/src/App.tsx#L46) prop to point at yours.
+Once you have your account token, update the [`accountId`](https://github.com/blossomdiary/papercups-chat-widget/blob/master/example/src/App.tsx#L46) prop to point at yours.
 
 ## Questions?
 
@@ -211,4 +214,4 @@ When creating a pull request, be sure to include a screenshot! 🎨
 
 ## License
 
-MIT © Papercups
+MIT © [Papercups](https://github.com/papercups-io)
