@@ -20,7 +20,7 @@ import getThemeConfig from '../theme';
 import store from '../storage';
 import Logger from '../logger';
 
-const DEFAULT_IFRAME_URL = 'https://chat-widget.papercups.io';
+const DEFAULT_IFRAME_URL = 'https://papercups-chat-widget.blossomdiary.dev';
 
 export type SharedProps = {
   token: string;
@@ -110,7 +110,7 @@ class ChatWidgetContainer extends React.Component<Props, State> {
         `The \`token\` must be a valid UUID. (Received invalid \`token\`: ${token})`
       );
       console.error(
-        `If you're missing a Papercups \`token\`, you can get one by signing up for a free account at https://app.papercups.io/register`
+        `If you're missing a Papercups \`token\`, you can get one by signing up for a free account at https://papercups.blossomdiary.dev/register`
       );
       throw new Error(`Invalid \`token\`: ${token}`);
     }
