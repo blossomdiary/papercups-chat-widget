@@ -616,6 +616,7 @@ class ChatWidgetContainer extends React.Component<Props, State> {
         return {...acc, [key]: customer[key]};
       } else {
         // Make sure all other passed-in values are strings
+        // @ts-ignore: https://www.typescriptlang.org/tsconfig/#suppressImplicitAnyIndexErrors
         return {...acc, [key]: String(customer[key])};
       }
     }, {});
